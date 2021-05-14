@@ -1,0 +1,27 @@
+---
+# YAML Configuration file with specifications
+
+server:
+  instance_type: t2.micro
+  ami_type: amzn2
+  architecture: x86_64
+  root_device_type: ebs
+  virtualization_type: hvm
+  min_count: 1
+  max_count: 1
+  volumes:
+    - device: /dev/xvda
+      size_gb: 10
+      type: gp2
+      mount: /
+    - device: /dev/xvdf
+      size_gb: 30
+      type: gp2
+      mount: /data
+  users:
+    - login: user1
+      ssh_key: ssh-rsa 
+    - login: user2
+      ssh_key: ssh-rsa 
+  
+
